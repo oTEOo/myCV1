@@ -1,0 +1,84 @@
+*
+{
+    box-sizing: border-box;
+
+}
+
+
+
+body
+{
+    background-color: lightcyan;
+    margin: 0;
+}
+
+.header
+{
+    background-color: darkgray;
+    padding: 20px;
+    text-align: center;
+
+
+}
+
+.nav
+{
+    overflow: hidden;
+    background-color: lightgray;
+
+}
+
+.nav a
+{
+    float: left;
+    display: block;
+    color: rgb(3, 3, 204);
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.nav a:hover
+{
+    background-color: green;
+    color: yellow;
+}
+
+.content
+{
+    background-color: antiquewhite;
+}
+
+.column
+{
+    float: left;
+    width: 33.33%;
+    background-color: lightgray;
+    border: 1px solid white;
+    padding: 10px;
+}
+
+.content:after
+{
+    content:"";
+    display: table;
+    clear: both;
+}
+
+/* responsive layout code */
+@media screen and (max-width:600px)
+{
+    .column
+    {
+        width: 100%;
+        
+    }
+}
+
+.footer
+{
+    background-color:black;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}

@@ -15,10 +15,64 @@
 
     <h1>Nguyễn Trung Hiếu</h1>
     <p class="about">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem, molestiae error. Nam, voluptas dolore molestiae soluta officia vel architecto. Quos, perferendis sit? Qui, ad quas corporis saepe fugiat incidunt culpa.</p>
+    
     <div class="social-media">
     <img src="images/facebook-icon.png" alt="facebook icon">
     <img src="images/twitter-icon.png" alt="twitter icon">
     <img src="images/whatsapp-icon.png" alt="whatsapp icon">
+    </div>
+
+    <h2>Hobby</h2>
+    <div class="hobby">
+    <img src="images/hobby1.png" alt="hobby1">
+    <p><b>Hobby1</b></p>
+    <small>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum consectetur corporis incidunt, aut, ullam, esse saepe officia repudiandae accusamus quos aliquid porro alias molestiae voluptas quam. Excepturi enim quis quod.
+    </small>
+    </div>
+    <div class="hobby">
+    <img src="images/hobby2.png" alt="hobby2">
+    <p><b>Hobby2</b></p>
+    <small>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum consectetur corporis incidunt, aut, ullam, esse saepe officia repudiandae accusamus quos aliquid porro alias molestiae voluptas quam. Excepturi enim quis quod.
+    </small>
+    </div>
+    <div class="hobby">
+    <img src="images/hobby3.png" alt="hobby3">
+    <p><b>Hobby3</b></p>
+    <small>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum consectetur corporis incidunt, aut, ullam, esse saepe officia repudiandae accusamus quos aliquid porro alias molestiae voluptas quam. Excepturi enim quis quod.
+    </small>
+    </div>
+    <div class="hobby">
+    <img src="images/hobby4.png" alt="hobby4">
+    <p><b>Hobby4</b></p>
+    <small>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum consectetur corporis incidunt, aut, ullam, esse saepe officia repudiandae accusamus quos aliquid porro alias molestiae voluptas quam. Excepturi enim quis quod.
+    </small>
+    </div>
+    
+    <h2>Education</h2>
+    <div class="education">
+    <img src="images/edu1.png" alt="edu1">
+    <p><b>edu1</b></p>
+    <small>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum consectetur corporis incidunt, aut, ullam, esse saepe officia repudiandae accusamus quos aliquid porro alias molestiae voluptas quam. Excepturi enim quis quod.
+    </small>
+    </div>
+    <div class="education">
+    <img src="images/edu2.png" alt="edu2">
+    <p><b>edu2</b></p>
+    <small>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum consectetur corporis incidunt, aut, ullam, esse saepe officia repudiandae accusamus quos aliquid porro alias molestiae voluptas quam. Excepturi enim quis quod.
+    </small>
+    </div>
+    <div class="education">
+    <img src="images/edu3.png" alt="edu3">
+    <p><b>edu3</b></p>
+    <small>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum consectetur corporis incidunt, aut, ullam, esse saepe officia repudiandae accusamus quos aliquid porro alias molestiae voluptas quam. Excepturi enim quis quod.
+    </small>
     </div>
     
     <h2>Expertise</h2>

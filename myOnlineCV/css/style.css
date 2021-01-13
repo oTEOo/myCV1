@@ -15,6 +15,7 @@ body
 {
     width: 40%;
     float: right;
+    height: 100vh;
 }
 
 .profile-img img
@@ -68,9 +69,55 @@ body
     margin-bottom: 15px;
 }
 
+.hobby img
+{
+    height: 50px;
+    margin: 5px;
+}
+
+.hobby
+{
+    display: inline-block;
+    width: 28%;
+    padding: 30px 10px;
+    margin: 2%;
+    text-align: center;
+    box-shadow: 0 0 15px 1px rgba(37,73,214,0.18);
+    background-color: white;
+}
+
+.hobby small
+{
+    padding-top: 10px;
+    display: block;
+}
+
+.education img
+{
+    height: 50px;
+    margin: 5px;
+}
+
+.education
+{
+    display: inline-block;
+    width: 28%;
+    padding: 30px 10px;
+    margin: 2%;
+    text-align: center;
+    box-shadow: 0 0 15px 1px rgba(37,73,214,0.18);
+    background-color: white;
+}
+
+.education small
+{
+    padding-top: 10px;
+    display: block;
+}
+
 .expertise img
 {
-    height: 100px;
+    height: 50px;
     margin: 5px;
 }
 
@@ -187,5 +234,25 @@ body
     .contact span
     {
         display: block;
+    }
+    .hobby
+    {
+        width: 95%;
+        margin-bottom: 10%;
+    }
+    .hobby img
+    {
+        height: 8%;
+        margin: 10px 0;
+    }
+    .education
+    {
+        width: 95%;
+        margin-bottom: 10%;
+    }
+    .education img
+    {
+        height: 8%;
+        margin: 10px 0;
     }
 }
