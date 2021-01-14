@@ -19,8 +19,8 @@
         $mail->isSMTP();
         $mail->Host="smtp.gmail.com;";
         $mail->SMTPAuth=true;
-        $mail->Username="hieu2000CBG@gmail.com";
-        $mail->Password="hieubg2000";
+        $mail->Username="email@gmail.com";
+        $mail->Password="emailpassword";
         $mail->Port=587;
         $mail->SMTPSecure="tls";
 
