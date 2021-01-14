@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/bootstrap.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Online CV</title>
@@ -110,21 +111,24 @@
     </div>
 
     <div class="form-box">
-
+    
     <h2>Contact me</h2>
-    <form action="">
+
+    <h4 class="send-notification"></h4>
+
+    <form id="contact-form">
         <div class="input-group">
-        <input type="text" placeholder="first name">
-        <input type="text" placeholder="last name">
+        <input type="text" id="name" placeholder="your name">
+        <input type="text" id="subject" placeholder="subject">
         </div>
         <div class="input-group">
-        <input type="number" placeholder="phone number">
-        <input type="email" placeholder="email">
+        <input type="number" id="Pnum" placeholder="phone number">
+        <input type="email" id="email" placeholder="email">
         </div>
         <div class="text-area">
-        <textarea rows="4" placeholder="your message"></textarea>
+        <textarea rows="4" id="msg" placeholder="your message"></textarea>
         </div>
-        <button type="submit" class="submit-btn">SEND MESSAGE</button>
+        <button type="button" onclick="sendMail()" name="btn-send" class="submit-btn">SEND MESSAGE</button>
     </form>
 
     </div>
@@ -138,7 +142,49 @@
 
     </div>
 
-    
+    <script src="https://code.jquery.com/jquery-3.5.1.js" ></script>
+    <script type="text/javascript">
+        function sendMail()
+        {
+            var name=$("#name");
+            var email=$("#email");
+            var subject=$("#subject");
+            var msg= $("#msg");
+
+            if(isNotEmpty(name) && isNotEmpty(email) && isNotEmpty(subject) && isNotEmpty(msg))
+            {
+                $.ajax({
+                    url: 'sendMail.php',
+                    method: 'POST',
+                    datatype: 'json',
+                    data:
+                    {
+                        name: name.val(),
+                        email: email.val(),
+                        subject: subject.val(),
+                        msg: msg.val()
+                    }, success: function(response){
+                        $('#contact-form')[0].reset();
+                        $('.send-notification').text("Message sent successfully.")
+                    }
+                });
+            }
+        }
+        function isNotEmpty(caller)
+        {
+            if(caller.val()=="")
+            {
+                caller.css('border','1px solid red');
+                return false;
+            }
+            else
+            {
+                caller.css('border','');
+                return true;
+            }
+        }
+    </script>
+
 
 </body>
 </html>
