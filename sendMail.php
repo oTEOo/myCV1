@@ -7,6 +7,7 @@
         $email=$_POST['email'];
         $subject=$_POST['subject'];
         $msg=$_POST['msg'];
+        $Pnum=$_POST['Pnum'];
 
         require_once "PHPMailer/PHPMailer.php";
         require_once "PHPMailer/SMTP.php";
@@ -19,8 +20,8 @@
         $mail->isSMTP();
         $mail->Host="smtp.gmail.com;";
         $mail->SMTPAuth=true;
-        $mail->Username="email@gmail.com";
-        $mail->Password="emailpassword";
+        $mail->Username="hieu2000CBG@gmail.com";
+        $mail->Password="hieubg2000";
         $mail->Port=587;
         $mail->SMTPSecure="tls";
 
@@ -28,8 +29,8 @@
         $mail->isHTML(true);
         $mail->setFrom($email, $name);
         $mail->addAddress("hieu2000CBG@gmail.com");
-        $mail->Subject = ("$email ($subject)");
-        $mail->Body = $msg;
+        $mail->Subject = ("$subject (Phone number:$Pnum)");
+        $mail->Body =  $msg;
 
         if($mail->send())
         {

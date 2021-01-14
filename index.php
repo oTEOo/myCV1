@@ -122,7 +122,7 @@
         <input type="text" id="subject" placeholder="subject">
         </div>
         <div class="input-group">
-        <input type="number" id="Pnum" placeholder="phone number">
+        <input type="text" id="Pnum" placeholder="phone number">
         <input type="email" id="email" placeholder="email">
         </div>
         <div class="text-area">
@@ -150,8 +150,9 @@
             var email=$("#email");
             var subject=$("#subject");
             var msg= $("#msg");
+            var Pnum=$("#Pnum");
 
-            if(isNotEmpty(name) && isNotEmpty(email) && isNotEmpty(subject) && isNotEmpty(msg))
+            if(isNotEmpty(name) && isNotEmpty(email) && isNotEmpty(subject) && isNotEmpty(msg) && isNotEmpty(Pnum))
             {
                 $.ajax({
                     url: 'sendMail.php',
@@ -162,7 +163,8 @@
                         name: name.val(),
                         email: email.val(),
                         subject: subject.val(),
-                        msg: msg.val()
+                        msg: msg.val(),
+                        Pnum: Pnum.val()
                     }, success: function(response){
                         $('#contact-form')[0].reset();
                         $('.send-notification').text("Message sent successfully.")
@@ -188,3 +190,4 @@
 
 </body>
 </html>
+
