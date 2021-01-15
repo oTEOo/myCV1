@@ -15,6 +15,9 @@
     <div class="profile-info">
 
     <h1>Nguyễn Trung Hiếu</h1>
+    <br>
+
+    <h2><b>About</b></h2>
     <p class="about">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem, molestiae error. Nam, voluptas dolore molestiae soluta officia vel architecto. Quos, perferendis sit? Qui, ad quas corporis saepe fugiat incidunt culpa.</p>
     
     <div class="social-media">
@@ -23,7 +26,42 @@
     <img src="images/whatsapp-icon.png" alt="whatsapp icon">
     </div>
 
-    <h2>Hobby</h2>
+    <h2><b>Basic information</b></h2>
+
+  <div class="container">
+    <div class="card" data-aos="fade-up" data-aos-offset="10">
+      
+          <div class="card-body">
+            
+            <div class="row">
+              <div class="col-sm-4"><strong class="text-uppercase">Age:</strong></div>
+              <div class="col-sm-8">24</div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-sm-4"><strong class="text-uppercase">Email:</strong></div>
+              <div class="col-sm-8">anthony@company.com</div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-sm-4"><strong class="text-uppercase">Phone:</strong></div>
+              <div class="col-sm-8">+1718-111-0011</div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-sm-4"><strong class="text-uppercase">Address:</strong></div>
+              <div class="col-sm-8">140, City Center, New York, U.S.A</div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-sm-4"><strong class="text-uppercase">Language:</strong></div>
+              <div class="col-sm-8">English, German, French</div>
+            </div>
+          </div>
+        
+      
+    </div>
+  </div>
+
+    
+
+    <h2><b>Hobby</b></h2>
     <div class="hobby">
     <img src="images/hobby1.png" alt="hobby1">
     <p><b>Hobby1</b></p>
@@ -53,7 +91,7 @@
     </small>
     </div>
     
-    <h2>Education</h2>
+    <h2><b>Education</b></h2>
     <div class="education">
     <img src="images/edu1.png" alt="edu1">
     <p><b>edu1</b></p>
@@ -76,7 +114,7 @@
     </small>
     </div>
     
-    <h2>Expertise</h2>
+    <h2><b>Expertise</b></h2>
     <div class="expertise">
     <img src="images/web.png" alt="web">
     <p><b>Web Designing</b></p>
@@ -99,7 +137,7 @@
     </small>
     </div>
 
-    <h2>My Project Work</h2>
+    <h2><b>My Project Work</b></h2>
     
     <div class="projects">
     <img src="images/1.png" alt="1">
@@ -112,7 +150,7 @@
 
     <div class="form-box">
     
-    <h2>Contact me</h2>
+    <h2><b>Contact me</b></h2>
 
     <h4 class="send-notification"></h4>
 
@@ -134,8 +172,8 @@
     </div>
     
     <div class="contact">
-        <span><img src="images/gmail.png" alt="gmail">hello@website.com</span>
-        <span><img src="images/phone.png" alt="phone">+12345677889</span>
+        <span><img src="images/gmail.png" alt="gmail">hieu2000CBG@gmail.com</span>
+        <span><img src="images/phone.png" alt="phone">+84769650015</span>
     </div>
 
     <p class="copyright">Designed by Nguyễn Trung Hiếu</p>
