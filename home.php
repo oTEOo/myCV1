@@ -18,7 +18,11 @@
 <body>
     <h1>Hello, <?php echo $_SESSION['user_name']; ?></h1>
 
+    <nav class="home-nav">
+    <a href="change-password.php">Change Password</a>
     <a href="logout.php">Logout</a>
+    </nav>
+    
 </body>
 </html>
 

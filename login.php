@@ -29,7 +29,7 @@
         else
         {
             //hashing password
-            $password_hashed= md5($password);
+            $password= md5($password);
 
             $sql= "SELECT * FROM user WHERE user_name='$username' and password='$password'";
 

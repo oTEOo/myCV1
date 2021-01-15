@@ -13,10 +13,11 @@
             return $data;
         }
         
-        $email=validate($_POST['email']);
+        
         $username=validate($_POST['username']);
         $password=validate($_POST['password']);
         $re_password=validate($_POST['re_password']);
+        $email=validate($_POST['email']);
 
         $udata= 'username='.$username. '&password='.$password;
 
@@ -49,7 +50,7 @@
         else
         {
             //hashing password
-            $password_hashed= md5($password);
+            $password= md5($password);
 
 
             $sql= "SELECT * FROM user WHERE user_name='$username'";
