@@ -33,6 +33,7 @@
                 $_SESSION['address']=$row['address'];
                 $_SESSION['language']=$row['language'];
                 $_SESSION['user_image']=$row['user_image'];
+                $_SESSION['about']=$row['about'];
             }
             
         };
@@ -124,7 +125,7 @@
     <br>
 
     <h2><b>About</b></h2>
-    <p class="about">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem, molestiae error. Nam, voluptas dolore molestiae soluta officia vel architecto. Quos, perferendis sit? Qui, ad quas corporis saepe fugiat incidunt culpa.</p>
+    <p class="about"><?php echo $_SESSION['about'] ?></p>
     
     <div class="social-media">
     <img src="images/facebook-icon.png" alt="facebook icon">
@@ -250,62 +251,20 @@
 
     </div>
     
+    <p class="copyright">Designed by Nguyễn Trung Hiếu</p>
+    
     <div class="contact">
         <span><img src="images/gmail.png" alt="gmail">hieu2000CBG@gmail.com</span>
         <span><img src="images/phone.png" alt="phone">+84769650015</span>
     </div>
 
-    <p class="copyright">Designed by Nguyễn Trung Hiếu</p>
+    
 
-    <p class="logout">Hi, <?php echo $uname ?>   <a href="logout.php">Log out</a></p> 
+    <p class="view">Hi, <?php echo $uname ?>   <a href="home.php">Account settings</a></p> 
 
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.js" ></script>
-    <script type="text/javascript">
-        function sendMail()
-        {
-            var name=$("#name");
-            var email=$("#email");
-            var subject=$("#subject");
-            var msg= $("#msg");
-            var Pnum=$("#Pnum");
-
-            if(isNotEmpty(name) && isNotEmpty(email) && isNotEmpty(subject) && isNotEmpty(msg) && isNotEmpty(Pnum))
-            {
-                $.ajax({
-                    url: 'sendMail.php',
-                    method: 'POST',
-                    datatype: 'json',
-                    data:
-                    {
-                        name: name.val(),
-                        email: email.val(),
-                        subject: subject.val(),
-                        msg: msg.val(),
-                        Pnum: Pnum.val()
-                    }, success: function(response){
-                        $('#contact-form')[0].reset();
-                        $('.send-notification').text("Message sent successfully.")
-                    }
-                });
-            }
-        }
-        function isNotEmpty(caller)
-        {
-            if(caller.val()=="")
-            {
-                caller.css('border','1px solid red');
-                return false;
-            }
-            else
-            {
-                caller.css('border','');
-                return true;
-            }
-        }
-    </script>
-
+    
 
 </body>
 </html>

@@ -20,6 +20,15 @@
             }
         ?>
 
+        <?php
+            if(isset($_GET['success']))
+            {?>
+                <p class="error"><?php echo $_GET['success']; ?></p>
+
+        <?php            
+            }
+        ?>
+
         <label>User Name</label>
         <input type="text" name="username" placeholder="User Name">
         <br>

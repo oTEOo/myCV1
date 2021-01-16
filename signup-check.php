@@ -59,7 +59,7 @@
 
             if(mysqli_num_rows($result) >0)
             {
-                header("location:signup.php?error=The username is taken&$udata");
+                header("location:signup.php?error=The username is taken");
                 exit();
             }
             else
@@ -69,7 +69,7 @@
 
                 if($result2)
                 {
-                    header("location:info.php");
+                    header("location:admin.php?success=Your account has been created");
                     exit();
                 }
                 else

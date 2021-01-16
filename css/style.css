@@ -82,7 +82,7 @@ body
 
 .hobby:hover
 {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 .hobby
@@ -112,7 +112,7 @@ body
 
 .education:hover
 {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 .education
@@ -142,7 +142,7 @@ body
 
 .expertise:hover
 {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 .expertise
@@ -174,7 +174,7 @@ body
 
 .projects img:hover
 {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 .form-box
@@ -237,7 +237,7 @@ body
     margin-bottom: 20px;
 }
 
-.logout
+.view
 {
     text-align: center;
     margin-bottom: 20px;

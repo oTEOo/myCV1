@@ -1,3 +1,10 @@
+<?php
+    session_start();
+
+    if(isset($_SESSION['id']) && isset($_SESSION['user_name']))
+    {
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,9 +15,9 @@
     <title>USER INFORMATION</title>
 </head>
 <body>
-    <form action="info-check.php" method="post">
+    <form action="upload-info.php" method="post" enctype="multipart/form-data">>
         <h2>User Information</h2>
-
+        
         <?php
             if(isset($_GET['error']))
             {?>
@@ -28,7 +35,6 @@
         <?php            
             }
         ?>
-
 
         <label>Name</label>
         <?php
@@ -120,10 +126,38 @@
             }
         ?>
         
-        
-        <button type="submit">Continue</button>
+        <label>About you</label>
+        <?php
+            if(isset($_GET['about']))
+            {?>
+                <input type="text" name="about" placeholder="Write something about you" value="<?php echo $_GET['about']; ?>">
+                <br>
+        <?php            
+            }
+            else
+            { ?>
+                <input type="text" name="about" placeholder="Write something about you">
+        <?php        
+            }
+        ?>
 
+        <label>Profile Picture</label>
+        <input type="file" name="userimage" required>
+        
+        <button type="submit" name="submit">Continue</button>
+        
+        <a href="option.php" class="ca">Back</a>
 
     </form>
 </body>
 </html>
+
+
+<?php
+    }
+    else
+    {
+        header("location: admin.php");
+        exit();
+    }
+?>
