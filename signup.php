@@ -68,7 +68,7 @@
         <label>Re Password</label>
         <input type="password" name="re_password" placeholder="Reenter Password">
         <br>
-        <button type="submit">Sign up</button>
+        <button type="submit">Continue</button>
 
         <a href="admin.php" class="ca">Already have an account?</a>
 

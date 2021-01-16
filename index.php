@@ -1,3 +1,107 @@
+<?php
+    session_start();
+    
+    include ("config.php");
+    if(isset($_SESSION['id']) && isset($_SESSION['user_name']))
+    {
+        $uname=$_SESSION['user_name'];
+        $sql= "SELECT * FROM user_info WHERE user_name='$uname'";
+        $result=mysqli_query($conn,$sql);
+
+        $sql1= "SELECT * FROM hobby WHERE user_name='$uname'";
+        $result1=mysqli_query($conn,$sql1);
+
+        $sql2= "SELECT * FROM education WHERE user_name='$uname'";
+        $result2=mysqli_query($conn,$sql2);
+
+        $sql3= "SELECT * FROM expertise WHERE user_name='$uname'";
+        $result3=mysqli_query($conn,$sql3);
+
+        $sql4= "SELECT * FROM project WHERE user_name='$uname'";
+        $result4=mysqli_query($conn,$sql4);
+    
+        
+        if(mysqli_num_rows($result))
+        {
+            $row=mysqli_fetch_assoc($result);
+            if($row['user_name']===$uname)
+            {
+                $_SESSION['name']=$row['name'];
+                $_SESSION['age']=$row['age'];
+                $_SESSION['phone']=$row['phone'];
+                $_SESSION['email']=$row['email'];
+                $_SESSION['address']=$row['address'];
+                $_SESSION['language']=$row['language'];
+                $_SESSION['user_image']=$row['user_image'];
+            }
+            
+        };
+        if(mysqli_num_rows($result1))
+        {
+            $id=array();
+            $hobby=array();
+            $hob_image=array();
+            while($row1=mysqli_fetch_assoc($result1))
+            {
+                array_push($id,$row1['id']);
+                array_push($hobby,$row1['hobby']);
+                array_push($hob_image,$row1['hob_image']);
+            }
+            
+            
+            
+        };
+        if(mysqli_num_rows($result2))
+        {
+            $id_edu=array();
+            $education=array();
+            $edu_description=array();
+            $edu_image=array();
+            while($row2=mysqli_fetch_assoc($result2))
+            {
+                array_push($id_edu,$row2['id_edu']);
+                array_push($education,$row2['education']);
+                array_push($edu_description,$row2['edu_description']);
+                array_push($edu_image,$row2['edu_image']);
+            }
+              
+        };
+        if(mysqli_num_rows($result3))
+        {
+            $id_exp=array();
+            $expertise_name=array();
+            $exp_description=array();
+            $exp_image=array();
+            while($row3=mysqli_fetch_assoc($result3))
+            {
+                array_push($id_exp,$row3['id_exp']);
+                array_push($expertise_name,$row3['expertise_name']);
+                array_push($exp_description,$row3['exp_description']);
+                array_push($exp_image,$row3['exp_image']);
+            }
+              
+        };
+        if(mysqli_num_rows($result4))
+        {
+            $id_pro=array();
+            $project=array();
+            $pro_image=array();
+            while($row4=mysqli_fetch_assoc($result4))
+            {
+                array_push($id_pro,$row4['id_pro']);
+                array_push($project,$row4['project']);
+                array_push($pro_image,$row4['pro_image']);
+            }
+              
+        };
+        
+        
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,13 +112,15 @@
     <title>My Online CV</title>
 </head>
 <body>
+    
+
     <div class="profile-img">
-    <img src="images/user.png" alt="profile-img">
+    <img src="images/<?php echo $_SESSION['user_image'] ?>" alt="profile-img">
     </div>
 
     <div class="profile-info">
 
-    <h1>Nguyễn Trung Hiếu</h1>
+    <h1><?php echo $_SESSION['name']; ?></h1>
     <br>
 
     <h2><b>About</b></h2>
@@ -35,23 +141,23 @@
             
             <div class="row">
               <div class="col-sm-4"><strong class="text-uppercase">Age:</strong></div>
-              <div class="col-sm-8">24</div>
+              <div class="col-sm-8"><?php echo $_SESSION['age']; ?></div>
             </div>
             <div class="row mt-3">
               <div class="col-sm-4"><strong class="text-uppercase">Email:</strong></div>
-              <div class="col-sm-8">anthony@company.com</div>
+              <div class="col-sm-8"><?php echo $_SESSION['email']; ?></div>
             </div>
             <div class="row mt-3">
               <div class="col-sm-4"><strong class="text-uppercase">Phone:</strong></div>
-              <div class="col-sm-8">+1718-111-0011</div>
+              <div class="col-sm-8"><?php echo $_SESSION['phone']; ?></div>
             </div>
             <div class="row mt-3">
               <div class="col-sm-4"><strong class="text-uppercase">Address:</strong></div>
-              <div class="col-sm-8">140, City Center, New York, U.S.A</div>
+              <div class="col-sm-8"><?php echo $_SESSION['address']; ?></div>
             </div>
             <div class="row mt-3">
               <div class="col-sm-4"><strong class="text-uppercase">Language:</strong></div>
-              <div class="col-sm-8">English, German, French</div>
+              <div class="col-sm-8"><?php echo $_SESSION['language']; ?></div>
             </div>
           </div>
         
@@ -59,95 +165,68 @@
     </div>
   </div>
 
+        
     
 
     <h2><b>Hobby</b></h2>
-    <div class="hobby">
-    <img src="images/hobby1.png" alt="hobby1">
-    <p><b>Hobby1</b></p>
-    <small>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum consectetur corporis incidunt, aut, ullam, esse saepe officia repudiandae accusamus quos aliquid porro alias molestiae voluptas quam. Excepturi enim quis quod.
-    </small>
-    </div>
-    <div class="hobby">
-    <img src="images/hobby2.png" alt="hobby2">
-    <p><b>Hobby2</b></p>
-    <small>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum consectetur corporis incidunt, aut, ullam, esse saepe officia repudiandae accusamus quos aliquid porro alias molestiae voluptas quam. Excepturi enim quis quod.
-    </small>
-    </div>
-    <div class="hobby">
-    <img src="images/hobby3.png" alt="hobby3">
-    <p><b>Hobby3</b></p>
-    <small>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum consectetur corporis incidunt, aut, ullam, esse saepe officia repudiandae accusamus quos aliquid porro alias molestiae voluptas quam. Excepturi enim quis quod.
-    </small>
-    </div>
-    <div class="hobby">
-    <img src="images/hobby4.png" alt="hobby4">
-    <p><b>Hobby4</b></p>
-    <small>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum consectetur corporis incidunt, aut, ullam, esse saepe officia repudiandae accusamus quos aliquid porro alias molestiae voluptas quam. Excepturi enim quis quod.
-    </small>
-    </div>
+    <?php 
+        for($i=0;$i<count($id);$i++)
+        { ?>
+            <div class="hobby">
+            <img src="images/<?php echo $hob_image[$i] ?>" alt="hobby1">
+            <p><b><?php echo $hobby[$i] ?></b></p>
+            </div>
+        <?php
+        }
+    ?>
+    
+    
     
     <h2><b>Education</b></h2>
-    <div class="education">
-    <img src="images/edu1.png" alt="edu1">
-    <p><b>edu1</b></p>
-    <small>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum consectetur corporis incidunt, aut, ullam, esse saepe officia repudiandae accusamus quos aliquid porro alias molestiae voluptas quam. Excepturi enim quis quod.
-    </small>
-    </div>
-    <div class="education">
-    <img src="images/edu2.png" alt="edu2">
-    <p><b>edu2</b></p>
-    <small>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum consectetur corporis incidunt, aut, ullam, esse saepe officia repudiandae accusamus quos aliquid porro alias molestiae voluptas quam. Excepturi enim quis quod.
-    </small>
-    </div>
-    <div class="education">
-    <img src="images/edu3.png" alt="edu3">
-    <p><b>edu3</b></p>
-    <small>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum consectetur corporis incidunt, aut, ullam, esse saepe officia repudiandae accusamus quos aliquid porro alias molestiae voluptas quam. Excepturi enim quis quod.
-    </small>
-    </div>
+    <?php
+        for($i=0;$i<count($id_edu);$i++)
+        { ?>
+            <div class="education">
+            <img src="images/<?php echo $edu_image[$i] ?>" alt="edu1">
+            <p><b><?php echo $education[$i] ?></b></p>
+            <small>
+            <?php echo $edu_description[$i] ?>
+            </small>
+            </div>
+        <?php    
+        }
+    ?>
+
+    
     
     <h2><b>Expertise</b></h2>
-    <div class="expertise">
-    <img src="images/web.png" alt="web">
-    <p><b>Web Designing</b></p>
-    <small>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ipsa temporibus voluptate delectus doloribus, tempore rem maiores dignissimos, ipsum facilis nobis, soluta totam quo quisquam! Totam quasi iste recusandae a!
-    </small>
-    </div>
-    <div class="expertise">
-    <img src="images/marketing.png" alt="marketing">
-    <p><b>Digital Marketing</b></p>
-    <small>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ipsa temporibus voluptate delectus doloribus, tempore rem maiores dignissimos, ipsum facilis nobis, soluta totam quo quisquam! Totam quasi iste recusandae a!
-    </small>
-    </div>
-    <div class="expertise">
-    <img src="images/graphics.png" alt="graphics">
-    <p><b>Graphics Designing</b></p>
-    <small>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ipsa temporibus voluptate delectus doloribus, tempore rem maiores dignissimos, ipsum facilis nobis, soluta totam quo quisquam! Totam quasi iste recusandae a!
-    </small>
-    </div>
+    <?php
+        for($i=0;$i<count($id_exp);$i++)
+        { ?>
+            <div class="expertise">
+            <img src="images/<?php echo $exp_image[$i] ?>" alt="exp1">
+            <p><b><?php echo $expertise_name[$i] ?></b></p>
+            <small>
+            <?php echo $exp_description[$i] ?>
+            </small>
+            </div>
+        <?php    
+        }
+    ?>
+
 
     <h2><b>My Project Work</b></h2>
-    
     <div class="projects">
-    <img src="images/1.png" alt="1">
-    <img src="images/2.png" alt="2">
-    <img src="images/3.png" alt="3">
-    <img src="images/4.png" alt="4">
-    <img src="images/5.png" alt="5">
-    <img src="images/6.png" alt="6">
+    <?php
+        for($i=0;$i<count($id_pro);$i++)
+        { ?>
+            
+            <img src="images/<?php echo $pro_image[$i] ?>" alt="pro1">
+            
+        <?php    
+        }
+    ?>
     </div>
-
     <div class="form-box">
     
     <h2><b>Contact me</b></h2>
@@ -177,6 +256,8 @@
     </div>
 
     <p class="copyright">Designed by Nguyễn Trung Hiếu</p>
+
+    <p class="logout">Hi, <?php echo $uname ?>   <a href="logout.php">Log out</a></p> 
 
     </div>
 
@@ -229,3 +310,11 @@
 </body>
 </html>
 
+<?php
+    }
+    else
+    {
+        header("location: admin.php");
+        exit();
+    }
+?>

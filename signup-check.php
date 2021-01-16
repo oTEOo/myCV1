@@ -19,32 +19,32 @@
         $re_password=validate($_POST['re_password']);
         $email=validate($_POST['email']);
 
-        $udata= 'username='.$username. '&password='.$password;
+        
 
 
         if(empty($username))
         {
-            header("location:signup.php?error=User name is required&$udata");
+            header("location:signup.php?error=User name is required");
             exit();
         }
         else if(empty($password))
         {
-            header("location:signup.php?error=Password is required&$udata");
+            header("location:signup.php?error=Password is required");
             exit();
         }
         else if(empty($re_password))
         {
-            header("location:signup.php?error=Reenter Password is required&$udata");
+            header("location:signup.php?error=Reenter Password is required");
             exit();
         }
         else if(empty($email))
         {
-            header("location:signup.php?error=Email is required&$udata");
+            header("location:signup.php?error=Email is required");
             exit();
         }
         else if($password !== $re_password)
         {
-            header("location:signup.php?error=The confirmation password does not match&$udata");
+            header("location:signup.php?error=The confirmation password does not match");
             exit();
         }
         else
@@ -64,17 +64,17 @@
             }
             else
             {
-                $sql2= "INSERT INTO user(user_name,email,password) VALUES ('$username','$email','$password_hashed')";
+                $sql2= "INSERT INTO user(user_name,email,password) VALUES ('$username','$email','$password')";
                 $result2=mysqli_query($conn,$sql2);
 
                 if($result2)
                 {
-                    header("location:signup.php?success=Your account has been created");
+                    header("location:info.php");
                     exit();
                 }
                 else
                 {
-                    header("location:signup.php?error=Unknown error&$udata");
+                    header("location:signup.php?error=Unknown error");
                     exit();
                 }
             }

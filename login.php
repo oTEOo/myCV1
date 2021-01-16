@@ -44,8 +44,9 @@
                     $_SESSION['user_name']=$row['user_name'];
                     $_SESSION['id']=$row['id'];
 
-                    header("location: home.php");
+                    header("location: index.php");
                     exit();
+
                 }
                 else
                 {
