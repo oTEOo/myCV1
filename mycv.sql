@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 16, 2021 at 06:55 AM
+-- Generation Time: Jan 17, 2021 at 02:57 PM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.4.12
 
@@ -136,9 +136,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `user_name`, `email`, `password`) VALUES
 (1, 'taehee1510', 'taehee1510@gmail.com', 'd7cbf096dcb677a7faabbec1b185a6b2'),
-(2, 'hieu2912', 'hieu2912@gmail.com', 'd7cbf096dcb677a7faabbec1b185a6b2'),
-(7, 'yasuomain2000', 'abc@gmail.com', '202cb962ac59075b964b07152d234b70'),
-(8, 'admin', 'abc@gmail.com', '202cb962ac59075b964b07152d234b70');
+(2, 'hieu2912', 'hieu2912@gmail.com', 'd7cbf096dcb677a7faabbec1b185a6b2');
 
 -- --------------------------------------------------------
 
@@ -154,16 +152,17 @@ CREATE TABLE `user_info` (
   `email` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
   `address` varchar(300) COLLATE utf8mb4_unicode_ci NOT NULL,
   `language` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `user_image` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `user_image` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `about` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `user_info`
 --
 
-INSERT INTO `user_info` (`user_name`, `name`, `age`, `phone`, `email`, `address`, `language`, `user_image`) VALUES
-('hieu2912', 'Nguyễn Văn A', 19, '0944016080', 'hieu2912@gmail.com', 'Hà Nội', 'Vietnamese', NULL),
-('taehee1510', 'Nguyễn Trung Hiếu', 20, '0769650015', 'hieu2000CBG@gmail.com', 'Bac Giang city, Viet Nam', 'Vietnamese, English, Japanese', 'user.png');
+INSERT INTO `user_info` (`user_name`, `name`, `age`, `phone`, `email`, `address`, `language`, `user_image`, `about`) VALUES
+('hieu2912', 'Nguyễn Văn C', 123, '123', 'avcs@gmail.com', 'asd', 'englishsadasd', '5ab39a69f38ab640833c37da3d9285d3.png', 'test thông tin 2'),
+('taehee1510', 'Nguyễn Trung Hiếu', 20, '0769650015', 'hieu2000CBG@gmail.com', 'Bac Giang city, Viet Nam', 'Vietnamese, English, Japanese', 'user.png', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem, molestiae error. Nam, voluptas dolore molestiae soluta officia vel architecto. Quos, perferendis sit? Qui, ad quas corporis saepe fugiat incidunt culpa.');
 
 --
 -- Indexes for dumped tables
@@ -220,31 +219,31 @@ ALTER TABLE `user_info`
 -- AUTO_INCREMENT for table `education`
 --
 ALTER TABLE `education`
-  MODIFY `id_edu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_edu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `expertise`
 --
 ALTER TABLE `expertise`
-  MODIFY `id_exp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_exp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `hobby`
 --
 ALTER TABLE `hobby`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `project`
 --
 ALTER TABLE `project`
-  MODIFY `id_pro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_pro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Constraints for dumped tables
